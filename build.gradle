@@ -1,0 +1,76 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+test {
+    useJUnitPlatform()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs 'Lab1/src/main/java'
+            srcDirs 'Lab2/src/main/java'
+            srcDirs 'Lab3/src/main/java'
+            srcDirs 'Lab4/src/main/java'
+            srcDirs 'Lab5/src/main/java'
+            srcDirs 'Lab6/src/main/java'
+            srcDirs 'Lab7/src/main/java'
+            srcDirs 'Lab8/src/main/java'
+            srcDirs 'Lab9/src/main/java'
+            srcDirs 'Lab11/src/main/java'
+            srcDirs 'Lab12/src/main/java'
+            srcDirs 'Lab13/src/main/java'
+            srcDirs 'Lab14/src/main/java'
+        }
+    }
+    
+    test {
+        java {
+            srcDirs 'Lab1/src/test/java'
+            srcDirs 'Lab2/src/test/java'
+            srcDirs 'Lab3/src/test/java'
+            srcDirs 'Lab4/src/test/java'
+            srcDirs 'Lab5/src/test/java'
+            srcDirs 'Lab6/src/test/java'
+            srcDirs 'Lab7/src/test/java'
+            srcDirs 'Lab8/src/test/java'
+            srcDirs 'Lab9/src/test/java'
+            srcDirs 'Lab11/src/test/java'
+            srcDirs 'Lab12/src/test/java'
+            srcDirs 'Lab13/src/test/java'
+            srcDirs 'Lab14/src/test/java'
+        }
+    }
+}
+
+dependencies {
+        
+    // Dependencies your project is based on and won't work without any of them
+    implementation group: 'org.jongo', name: 'jongo', version: '1.1'
+    implementation group: 'org.mongodb', name: 'mongo-java-driver', version: '2.+'
+    implementation 'org.testng:testng:7.1.0'
+
+    // Dependencies just for testing and won't be added to your project
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    testImplementation group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+    testImplementation group: 'org.assertj', name: 'assertj-core', version: '2.0.0'
+
+    //testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.+'
+    testImplementation group: 'org.easymock', name: 'easymock', version: '3.3.1'
+	
+	 testImplementation "org.mockito:mockito-core:3.+"
+    testImplementation "org.mockito:mockito-junit-jupiter:2.23+"
+	testImplementation 'org.junit.platform:junit-platform-runner:1.2+'
+	testImplementation 'org.junit.vintage:junit-vintage-engine:5.8+'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+    
+}
+
