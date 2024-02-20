@@ -8,7 +8,7 @@ public class CourseFactory {
      */
     public static Course getCourse(String courseName){
         switch (courseName){
-            //TODO add a case for cs150 course
+            //TODO: add a case for cs150 course
             case "CS160":
                 return new CS160();
             case "CS210":
