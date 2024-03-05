@@ -23,7 +23,7 @@ public abstract class Course {
     public void addStudent(Student studentToBeEnrolled) throws StudentAlreadyEnrolledException, ClassFullException {
         //TODO check if studentToBeEnrolled is null if yes throw new NullPointerException
 
-        //TODO check if studentToBeEnrolled is not already enrolled in the class if yes create and throw a StudentAlreadyPresentException,
+        //TODO check if studentToBeEnrolled is not already enrolled in the class if yes create and throw a StudentAlreadyEnrolledException,
         // you may leverage the studentAlreadyPresent function below
 
         //TODO check is class is already full if yes create and throw a ClassFullException
