@@ -11,7 +11,7 @@ public class MathOperations {
 
     public MathOperations() {
         // TODO change this to use DoubleCalculator
-        this.calculator = new SimpleCalculator();
+      //  this.calculator = new DoubleCalculator();
     }
 
     public double factorial(int n){
@@ -22,19 +22,19 @@ public class MathOperations {
         return factorial;
     }
 
-    public int average(int[] arr){
-        int sum=0;
-        for(int i : arr){
+    public double average(double[] arr){
+        double sum=0;
+        for(double i : arr){
             sum = calculator.add(sum, i);
         }
 
-        return calculator.div(sum, arr.length);
+        return calculator.div(sum, Double.valueOf(arr.length));
     }
 
     // Make sure the second variable is int only
     // the signature should look like double power(double a, int b)
-    public int power(int a, int b){
-        int res = 1;
+    public double power(double a, int b){
+        double res = 1;
         for(int i=1;i<=b;i++){
             res = calculator.mul(res, a);
         }
@@ -47,10 +47,10 @@ public class MathOperations {
         return midValue;
     }
 
-    public int fahrenheitToCelsius(int fahrenheit){
-        int baseSubtraction = calculator.sub(fahrenheit, 32);
-        int baseMultiplication = calculator.mul(baseSubtraction, 5);
-        int baseDivision = calculator.div(baseMultiplication, 9);
+    public double fahrenheitToCelsius(double fahrenheit){
+        double baseSubtraction = calculator.sub(fahrenheit, 32.0);
+        double baseMultiplication = calculator.mul(baseSubtraction, 5.0);
+        double baseDivision = calculator.div(baseMultiplication, 9.0);
         return baseDivision;
     }
 }
