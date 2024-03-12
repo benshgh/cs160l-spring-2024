@@ -1,51 +1,50 @@
 package edu.sdsu.cs160l.calculator;
 
-public class MathOperations {
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.junit.platform.suite.api.Suite;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-    private Calculator<Double> calculator;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.doAnswer;
 
-    public MathOperations() {
-        // TODO change this to use DoubleCalculator
-        //this.calculator = new DoubleCalculator();
+class MathOperationsTest {
+
+    private MathOperations mathOperations;
+
+    @BeforeEach
+    public void init(){
+        mathOperations = new MathOperations();
     }
 
-    public double factorial(int n){
-        double factorial = 1;
-        for(double i=2;i<=n;i++){
-            factorial = calculator.mul(factorial, i);
-        }
-        return factorial;
+    @Test
+    public void testFactorial() {
+        assertEquals(6, mathOperations.factorial(3));
     }
 
-    public double average(double[] arr){
-        double sum=0;
-        for(double i : arr){
-            sum = calculator.add(sum, i);
-        }
-
-        return calculator.div(sum, Double.valueOf(arr.length));
+    @Test
+    public void testAverage() {
+        assertEquals(2.0, mathOperations.average(new double[]{1.0, 2.0, 3.0}));
     }
 
-    // Make sure the second variable is int only
-    // the signature should look like double power(double a, int b)
-    public double power(double a, int b){
-        double res = 1;
-        for(int i=1;i<=b;i++){
-            res = calculator.mul(res, a);
-        }
-        return  res;
+    @Test
+    public void testPower() {
+        assertEquals(8.0, mathOperations.power(2.0, 3));
     }
 
-    public double midValue(double a, double b){
-        double add  = calculator.add(a, b);
-        double midValue = calculator.div(add, 2.0);
-        return midValue;
+    @Test
+    public void testMidValue() {
+        assertEquals(10.2, mathOperations.midValue(5.2, 15.2));
     }
 
-    public double fahrenheitToCelsius(double fahrenheit){
-        double baseSubtraction = calculator.sub(fahrenheit, 32.0);
-        double baseMultiplication = calculator.mul(baseSubtraction, 5.0);
-        double baseDivision = calculator.div(baseMultiplication, 9.0);
-        return baseDivision;
+    @Test
+    public void testFToC() {
+        assertEquals(0.0, mathOperations.fahrenheitToCelsius(32.0));
     }
+
+
 }
