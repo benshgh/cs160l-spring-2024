@@ -10,9 +10,9 @@ package edu.sdsu.cs160l.calculator;
  *         in case of Double calculator you may remove exception and return Double.POSITIVE_INFINITY when divisor is 0
  *
  */
-public interface Calculator<T extends Number> {
-    T add(T a, T b);
-    T sub(T a, T b);
-    T div(T a, T b) throws ArithmeticException;
-    T mul(T a, T b);
+public interface Calculator<T> {
+    int add(int a, int b);
+    int sub(int a, int b);
+    int div(int a, int b) throws ArithmeticException;
+    int mul(int a, int b);
 }
